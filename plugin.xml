@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<plugin xmlns="http://apache.org/cordova/ns/plugins/1.0"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    id="cheshmak-plus-cordova-plugin"
+    version="1.1.10">
+	
+    <name>Cheshmak Plus Cordova Plugin</name>
+    <description>Integration of Cheshmak Plus library to Cordova</description>
+    <author>Milad Mohammadi Rezagah</author>		
+    <license>MIT</license>
+    <keywords>cordova,plugin,cheshmak,ads,admob</keywords>
+    <repo>https://github.com/vinoosir/cheshmak-plus-cordova-plugin</repo>
+    <issue>https://github.com/vinoosir/cheshmak-plus-cordova-plugin/issues</issue>
+	<engines>
+	    <engine name="cordova" version=">=3.0.0" />
+	</engines>
+	
+    <js-module src="www/cheshmakplus.js" name="cheshmakplus">
+        <clobbers target="window.cheshmakplus" />
+    </js-module>
+    
+    <!-- android -->
+    <platform name="android">
+        <config-file target="res/xml/config.xml" parent="/*">
+            <feature name="CheshmakPlusCordova" >
+                <param name="android-package" value="me.cheshmak.cordova.CheshmakPlusCordova"/>
+            </feature>
+        </config-file>
+		
+		<framework src="src/build.gradle" custom="true" type="gradleReference" />
+        <source-file src="src/CheshmakPlusCordova.java" target-dir="src/me/cheshmak/cordova" />
+
+		<framework src="me.cheshmak:cheshmakplus:1.1.10" />
+		<framework src="com.google.android.gms:play-services-ads:17.2.0" />
+    
+    </platform>
+</plugin>

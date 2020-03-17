@@ -1,0 +1,40 @@
+{
+  "name": "Cheshmak Plus Cordova Plugin",
+  "version": "1.1.10",
+  "description": "Integration of Cheshmak Plus library to Cordova",
+  "cordova": {
+    "platforms": [
+      "android"
+    ]
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/vinoosir/cheshmak-cordova-plugin.git"
+  },
+  "keywords": [
+    "cordova",
+    "ecosystem:cordova",
+    "cordova-android",
+    "android",
+    "cheshmak",
+    "ads",
+    "admob",
+    "ionic"
+  ],
+  "engines": {
+    "cordovaDependencies": {
+      "0.0.0": {
+        "cordova-android": ">=4.0.0"
+      },
+      "2.0.0": {
+        "cordova": ">100"
+      }
+    }
+  },
+  "author": {
+    "name": "Milad Mohammadi",
+    "email": "rezagah.milad@gmail.com",
+    "url": "miladesign.ir"
+  },
+  "license": "MIT"
+}
