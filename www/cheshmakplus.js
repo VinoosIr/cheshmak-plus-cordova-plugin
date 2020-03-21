@@ -17,6 +17,7 @@ module.exports = {
         ); 
     },
     setTestMode: function(test) {
+		console.log("test mode: " + test);
         cordova.exec(
 			function (result) {
 				console.log('SetTest Success.');
@@ -84,14 +85,19 @@ module.exports = {
     },
     showInterstitialAd: function () {
         cordova.exec(
-            function (result) {
-				console.log('showInterstitialAd Success.');
-			},
-            function (error) {
-				console.log(error);
-			},
+            null,
+            null,
             'CheshmakPlusCordova',
             'showInterstitialAd',
+            []
+        );
+    },
+    isInterstitialAdLoaded: function (success) {
+        cordova.exec(
+            success,
+            null,
+            'CheshmakPlusCordova',
+            'isInterstitialAdLoaded',
             []
         );
     },
@@ -135,14 +141,19 @@ module.exports = {
     },
     showRewardedAd: function () {
         cordova.exec(
-            function (result) {
-				console.log('showRewardedAd Success.');
-			},
-            function (error) {
-				console.log(error);
-			},
+            null,
+            null,
             'CheshmakPlusCordova',
             'showRewardedAd',
+            []
+        );
+    },
+    isRewardedAdLoaded: function (success) {
+        cordova.exec(
+            success,
+            null,
+            'CheshmakPlusCordova',
+            'isRewardedAdLoaded',
             []
         );
     },

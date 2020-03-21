@@ -57,7 +57,7 @@ For example, if you download it to *D:/development/cheshmak-plus-cordova* and *c
 To use interstitial ad you need to load interstitial ad first:
 ``window.cheshmakplus.loadInterstitialAd();``
 
-then you can use events and in `onAdLoaded` event you can show ad:
+after that this events will raised:
 ```js
 	window.cheshmakplus.onAdLoaded = function () {
 		console.log('onAdLoaded');
@@ -74,14 +74,20 @@ then you can use events and in `onAdLoaded` event you can show ad:
 ```
 
 to show ad use this code:
-``window.cheshmakplus.showInterstitialAd();``
+```js
+window.cheshmakplus.isInterstitialAdLoaded(function(isLoaded){
+ if (isLoaded) {
+  window.cheshmakplus.showInterstitialAd();
+ }
+});
+```
 
 ## 4. Rewarded Ad
 
 To use rewarded ad you need to load rewarded ad first:
 ``window.cheshmakplus.loadRewardedAd();``
 
-then you can use events and in `onRewardedVideoAdLoaded` event you can show ad:
+after that this events will raised:
 ```js
 	window.cheshmakplus.onRewardedVideoAdLoaded = function () {
 		console.log('onRewardedVideoAdLoaded');
@@ -101,7 +107,13 @@ then you can use events and in `onRewardedVideoAdLoaded` event you can show ad:
 ```
 
 to show ad use this code:
-``window.cheshmakplus.showRewardedAd();``
+```js
+window.cheshmakplus.isRewardedAdLoaded(function(isLoaded){
+ if (isLoaded) {
+  window.cheshmakplus.showRewardedAd();
+ }
+});
+```
 
 ## 5. Designer
 

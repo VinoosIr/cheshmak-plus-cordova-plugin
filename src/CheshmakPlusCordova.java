@@ -63,12 +63,20 @@ public class CheshmakPlusCordova extends CordovaPlugin {
             showInterstitialAd(callbackContext);
             return true;
         }
+        if ("isInterstitialAdLoaded".equals(action)) {
+            isInterstitialAdLoaded(callbackContext);
+            return true;
+        }
         if ("loadRewardedAd".equals(action)) {
         	loadRewardedAd(callbackContext);
             return true;
         }
         if ("showRewardedAd".equals(action)) {
         	showRewardedAd(callbackContext);
+            return true;
+        }
+        if ("isRewardedAdLoaded".equals(action)) {
+            isRewardedAdLoaded(callbackContext);
             return true;
         }
         return false;
@@ -166,12 +174,16 @@ public class CheshmakPlusCordova extends CordovaPlugin {
     	cordova.getActivity().runOnUiThread(new Runnable() {
             @Override
             public void run() {
-            	if (cheshmakInterstitialAd.isLoaded()) {
-            		cheshmakInterstitialAd.show();
-            		callbackContext.success();
-            	} else {
-            		callbackContext.error("interstitialAd is not loaded.");
-            	}
+            	cheshmakInterstitialAd.show();
+            }
+        });
+    }
+
+    private void isInterstitialAdLoaded(final CallbackContext callbackContext) {
+    	cordova.getActivity().runOnUiThread(new Runnable() {
+            @Override
+            public void run() {
+            	callbackContext.success(cheshmakInterstitialAd.isLoaded().toString());
             }
         });
     }
@@ -226,12 +238,16 @@ public class CheshmakPlusCordova extends CordovaPlugin {
     	cordova.getActivity().runOnUiThread(new Runnable() {
             @Override
             public void run() {
-            	if (cheshmakRewardedAd.isLoaded()) {
-            		cheshmakRewardedAd.show();
-            		callbackContext.success();
-            	} else {
-            		callbackContext.error("rewardedAd is not loaded.");
-            	}
+            	cheshmakRewardedAd.show();
+            }
+        });
+    }
+
+    private void isRewardedAdLoaded(final CallbackContext callbackContext) {
+    	cordova.getActivity().runOnUiThread(new Runnable() {
+            @Override
+            public void run() {
+            	callbackContext.success(cheshmakRewardedAd.isLoaded().toString());
             }
         });
     }

@@ -68,9 +68,9 @@
 			<button onclick='window.cheshmakplus.addBanner(window.cheshmakplus.Position.XY, 0, random_position(0, 850));'>Show Banner at Random Position</button>
 			<button onclick="window.cheshmakplus.removeBanner();">Remove Banner</button>
             <button onclick='window.cheshmakplus.loadInterstitialAd();'>loadInterstitialAd</button>
-			<button onclick="window.cheshmakplus.showInterstitialAd();">showInterstitialAd</button>
+			<button onclick="window.cheshmakplus.isInterstitialAdLoaded(function(isLoaded){if (isLoaded){window.cheshmakplus.showInterstitialAd();}});">showInterstitialAd</button>
             <button onclick='window.cheshmakplus.loadRewardedAd();'>loadRewardedAd</button>
-			<button onclick="window.cheshmakplus.showRewardedAd();">showRewardedAd</button>
+			<button onclick="window.cheshmakplus.isRewardedAdLoaded(function(isLoaded){if (isLoaded){window.cheshmakplus.showRewardedAd();}});">showRewardedAd</button>
         </div>
     </body>
 </html>
