@@ -1,5 +1,5 @@
 {
-  "name": "Cheshmak Plus Cordova Plugin",
+  "name": "cheshmak-plus-cordova-plugin",
   "version": "1.1.10",
   "description": "Integration of Cheshmak Plus library to Cordova",
   "cordova": {
@@ -32,9 +32,9 @@
     }
   },
   "author": {
-    "name": "Milad Mohammadi",
+    "name": "Milad Mohammadi Rezagah",
     "email": "rezagah.milad@gmail.com",
-    "url": "miladesign.ir"
+    "url": "http://miladesign.ir"
   },
   "license": "MIT"
 }
